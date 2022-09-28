@@ -1,0 +1,30 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./print_font.TTF);
+}
+
+.LierLogo {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 64px;
+  width: 160px;
+  padding-left: 10px;
+  line-height: 50px;
+  user-select: none;
+  .LierLogoTitle {
+    height: 50%;
+    font-size: 28px;
+    color: var(--ant-primary-color);
+    .myFont {
+      font-family: myFirstFont;
+    }
+  }
+
+  .LierLogoContent {
+    line-height: 30px;
+    height: 50%;
+    font-size: 10px;
+    color: var(--ant-primary-4);
+  }
+}

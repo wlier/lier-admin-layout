@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  lier_admin_layout:
+    image: lier-admin-layout:latest
+    container_name: lier-admin
+    ports:
+      - "28080:80"
