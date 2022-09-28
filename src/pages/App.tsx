@@ -11,13 +11,7 @@ import React, {
   useState,
   createElement,
 } from 'react'
-import {
-  HashRouter,
-  Navigate,
-  Outlet,
-  Route,
-  Routes,
-} from 'react-router-dom'
+import { HashRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import LierLayout from '../components/layout'
 import userAccessConfig from '@/config/user-access'
 import './App.less'
