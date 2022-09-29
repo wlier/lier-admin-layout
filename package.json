@@ -1,7 +1,7 @@
 {
   "name": "root-app",
   "version": "0.1.0",
-  "license": "MTI",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
