@@ -63,11 +63,17 @@ const MenuConfig = [
     label: '效能中心',
     icon: <AppstoreOutlined />,
     children: [
+      // 任务管理
+      {
+        key: '/efficiency/task-manager',
+        label: <Link to='/efficiency/task-manager'>任务管理</Link>,
+      },
       // 项目管理
       {
         key: '/efficiency/project-manager',
         label: <Link to='/efficiency/project-manager'>项目管理</Link>,
       },
+      // 团队管理
       {
         key: '/efficiency/team-manager',
         label: <Link to='/efficiency/team-manager'>团队管理</Link>,

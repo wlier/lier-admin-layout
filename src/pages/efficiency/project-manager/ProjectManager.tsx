@@ -15,12 +15,36 @@ const ProjectManager: React.FC = () => {
 
   useEffect(() => {
     dragula(
-      [document.getElementById('left'), document.getElementById('right')],
+      [
+        document.getElementById('a'),
+        document.getElementById('b'),
+        document.getElementById('c'),
+        document.getElementById('d'),
+      ],
       {
-        accepts: function (el: any, target: any) {
+        accepts: function (el: any, target: any, source: any, sibling: any) {
           console.log('el', el)
           console.log('target', target)
-          return target === document.getElementById('right')
+          console.log('source', source)
+          console.log('right', sibling)
+
+          switch (source) {
+            case document.getElementById('a'): {
+              return (
+                target === document.getElementById('b') ||
+                target === document.getElementById('d')
+              )
+            }
+            case document.getElementById('b'): {
+              return (
+                target === document.getElementById('c') ||
+                target === document.getElementById('d')
+              )
+            }
+            case document.getElementById('c'): {
+              return target === document.getElementById('d')
+            }
+          }
         },
       }
     )
@@ -29,7 +53,7 @@ const ProjectManager: React.FC = () => {
     <div className='ProBox'>
       <Row>
         <Col span={6}>
-          <div id='left'>
+          <div id='a'>
             <div style={{ background: 'blue', height: 20 }}></div>
             <div style={{ background: 'green', height: 20 }}></div>
             <div style={{ background: 'pink', height: 20 }}></div>
@@ -49,7 +73,7 @@ const ProjectManager: React.FC = () => {
           </div>
         </Col>
         <Col span={6}>
-          <div id='right' style={{ background: 'pink' }}>
+          <div id='b' style={{ background: 'pink' }}>
             <div style={{ background: 'red', height: 20 }}>西瓜</div>
             <div style={{ background: 'yellow', height: 20 }}>苹果</div>
             <div style={{ background: 'pink', height: 20 }}>香蕉</div>
@@ -60,7 +84,7 @@ const ProjectManager: React.FC = () => {
           </div>
         </Col>
         <Col span={6}>
-          <div id='right1' style={{ background: 'pink' }}>
+          <div id='c' style={{ background: 'pink' }}>
             <div style={{ background: 'red', height: 20 }}>西瓜1</div>
             <div style={{ background: 'yellow', height: 20 }}>苹果1</div>
             <div style={{ background: 'pink', height: 20 }}>香蕉1</div>
@@ -71,7 +95,7 @@ const ProjectManager: React.FC = () => {
           </div>
         </Col>
         <Col span={6}>
-          <div id='right2' style={{ background: 'pink' }}>
+          <div id='d' style={{ background: 'pink' }}>
             <div style={{ background: 'red', height: 20 }}>西瓜2</div>
             <div style={{ background: 'yellow', height: 20 }}>苹果2</div>
             <div style={{ background: 'pink', height: 20 }}>香蕉2</div>

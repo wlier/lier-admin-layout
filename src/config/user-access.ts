@@ -11,6 +11,7 @@ export default [
       '/user/user-manager',
       '/user/role-manager',
       '/user/permission-manager',
+      '/efficiency/task-manager',
       '/efficiency/project-manager',
       '/efficiency/team-manager',
       '/monitor/realtime-monitor',
