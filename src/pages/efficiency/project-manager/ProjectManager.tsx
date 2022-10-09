@@ -20,31 +20,33 @@ const ProjectManager: React.FC = () => {
         document.getElementById('b'),
         document.getElementById('c'),
         document.getElementById('d'),
-      ],
+      ] as HTMLElement[],
       {
-        accepts: function (el: any, target: any, source: any, sibling: any) {
+        // el 自己
+        // target 去哪里
+        // source 来自哪里
+        // sibling 到达目标后的相邻元素（后一个）
+        accepts: function (
+          el?: Element,
+          target?: Element,
+          source?: Element,
+          sibling?: Element
+        ) {
           console.log('el', el)
+          // 获取el自定义属性data
+
           console.log('target', target)
           console.log('source', source)
-          console.log('right', sibling)
+          console.log('sibling', sibling)
+          return true
+        },
 
-          switch (source) {
-            case document.getElementById('a'): {
-              return (
-                target === document.getElementById('b') ||
-                target === document.getElementById('d')
-              )
-            }
-            case document.getElementById('b'): {
-              return (
-                target === document.getElementById('c') ||
-                target === document.getElementById('d')
-              )
-            }
-            case document.getElementById('c'): {
-              return target === document.getElementById('d')
-            }
-          }
+        // el 被移动元素
+        // container 被移动元素所处容器
+        // handle 被移动元素
+        // sibling 被移动元素下一个元素，如果被移动元素为最后一个，则为null
+        moves: (el?, container?, handle?, sibling?) => {
+          return true
         },
       }
     )
@@ -102,7 +104,9 @@ const ProjectManager: React.FC = () => {
             <div style={{ background: 'blue', height: 20 }}>葡萄2</div>
             <div style={{ background: 'blue', height: 20 }}>榴莲2</div>
             <div style={{ background: 'blue', height: 20 }}>橘子2</div>
-            <div style={{ background: 'blue', height: 20 }}>石榴2</div>
+            <div className='ddd' style={{ background: 'blue', height: 20 }}>
+              石榴2
+            </div>
           </div>
         </Col>
       </Row>
