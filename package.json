@@ -15,6 +15,7 @@
     "@types/node": "^16.11.46",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/react-dragula": "^1.1.0",
     "antd": "^4.23.2",
     "axios": "^0.27.2",
     "craco-antd": "^2.0.0",

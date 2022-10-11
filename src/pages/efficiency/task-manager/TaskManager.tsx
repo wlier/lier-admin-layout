@@ -19,7 +19,7 @@ const TaskManager: React.FC = () => {
         document.getElementById('taskStatus2'),
         document.getElementById('taskStatus3'),
         document.getElementById('taskStatus4'),
-      ],
+      ] as HTMLElement[],
       {
         accepts: function (el: any, target: any, source: any, sibling: any) {
           switch (source) {
@@ -38,6 +38,8 @@ const TaskManager: React.FC = () => {
             case document.getElementById('taskStatus3'): {
               return target === document.getElementById('taskStatus4')
             }
+            default:
+              return true
           }
         },
       }
