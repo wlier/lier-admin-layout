@@ -18,7 +18,7 @@ const _interopRequireDefault = (obj: any) => {
 const antd_icon = _interopRequireDefault(_antd_icon)
 
 const LierIcon: React.FC<LierIconProps> = ({
-  scriptUrl = '//at.alicdn.com/t/c/font_3294159_bhg0q2oujoo.js',
+  scriptUrl = '//at.alicdn.com/t/c/font_3294159_h79nws8zmc9.js',
   antdIcon,
   svgIcon,
   style,
